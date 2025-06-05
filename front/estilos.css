@@ -1,0 +1,6 @@
+body.dark-mode {
+        --primary: #ffc107;
+        --background: #121212;
+        --card-bg: #1e1e1e;
+        --text-color: #ffffff;
+    }
