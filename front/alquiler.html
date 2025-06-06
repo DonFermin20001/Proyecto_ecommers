@@ -1,11 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hola mundo</title>
+  <meta charset="UTF-8">
+  <title>Herramientas en Alquiler</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .tool-card {
+      display: none;
+    }
+    .tool-card.active {
+      display: block;
+    }
+  </style>
 </head>
-<body>
-    
+<body class="bg-light">
+
+<div class="container my-4">
+  <h1 class="text-center">Alquiler de Herramientas</h1>
+
+  <!-- Filtros -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <label>Filtrar por marca:</label>
+      <select id="brandFilter" class="form-select">
+        <option value="all">Todas</option>
+        <option value="cat">CAT</option>
+        <option value="dewalt">DeWalt</option>
+        <option value="stanley">Stanley</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label>Filtrar por tipo:</label>
+      <select id="typeFilter" class="form-select">
+        <option value="all">Todos</option>
+        <option value="corte">Corte</option>
+        <option value="manual">Manual</option>
+        <option value="electrica">Eléctrica</option>
+        <option value="medicion">Medición</option>
+      </select>
+    </div>
+  </div>
+
+                                <!-- Catálogo -->
+    <!-- Agrega aquí los otros 27 ítems cambiando la clase según marca y tipo -->
+    <div class="row" id="toolContainer">
+
+    <div class="col-md-4 mb-3 tool-card cat corte">
+      <div class="card">
+        <img src="..//img/cat_1_corte.jpg" class="card-img-top" alt="Sierra de corte CAT"> <!--ítem 1-->
+        <div class="card-body">
+          <h5 class="card-title">Sierra Recíproca CAT</h5>
+          <p class="card-text">Tipo: Corte<br>Marca: CAT</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt corte">
+
+    <div class="card">
+        <img src="..//img/dewalt_1_corte.jpg" class="card-img-top" alt="Sierra de corte dewalt"> <!--ítem 2-->
+        <div class="card-body">
+          <h5 class="card-title">Sierra Recíproca dewalt</h5>
+          <p class="card-text">Tipo: Corte<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley electrica">
+    <div class="card">
+        <img src="..//img/stanley_1_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 3-->
+        <div class="card-body">
+          <h5 class="card-title">no se que es stanley</h5>
+          <p class="card-text">Tipo: electrica<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat electrica">
+    <div class="card">
+        <img src="..//img/cat_1_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 4-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es cat</h5>
+          <p class="card-text">Tipo: electrica<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+
+<div class="col-md-4 mb-3 tool-card stanley medicion">
+    <div class="card">
+        <img src="..//img/stanley_1_medición.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 5-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: medicion<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt medicion">
+    <div class="card">
+        <img src="..//img/dewalt_1_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 6-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: medicion<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat manual">
+    <div class="card">
+        <img src="..//img/cat_1_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 7-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat manual">
+    <div class="card">
+        <img src="..//img/cat_2_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 8-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: cat<caption></caption></p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat manual">
+    <div class="card">
+        <img src="..//img/cat_3_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 9-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat Corte">
+    <div class="card">
+        <img src="..//img/cat_2_corte.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 10-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: corte<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat corte">
+    <div class="card">
+        <img src="..//img/cat_3_corte.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 11-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: corte<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat electrica">
+    <div class="card">
+        <img src="..//img/cat_2_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 12-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: electrica<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card cat electrica">
+    <div class="card">
+        <img src="..//img/cat_3_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 13-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: electrica<br>Marca: cat</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt manual">
+    <div class="card">
+        <img src="..//img/dewalt_1_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 14-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt manual">
+    <div class="card">
+        <img src="..//img/dewalt_2_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 15-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt manual">
+    <div class="card">
+        <img src="..//img/dewalt_3_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 16-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt corte">
+    <div class="card">
+        <img src="..//img/dewalt_2_corte.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 17-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: corte<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt corte">
+    <div class="card">
+        <img src="..//img/dewalt_3_corte.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 18-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: corte<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt medicion">
+    <div class="card">
+        <img src="..//img/dewalt_2_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 19-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: medicion<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card dewalt medicion">
+    <div class="card">
+        <img src="..//img/dewalt_3_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 20-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: medicion<br>Marca: dewalt</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley medicion">
+    <div class="card">
+        <img src="..//img/stanley_2_medición.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 21-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: medicion<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley medicion">
+    <div class="card">
+        <img src="..//img/stanley_3_medición.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 22-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: medicion<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley manual">
+    <div class="card">
+        <img src="..//img/stanley_1_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 23-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley manual">
+    <div class="card">
+        <img src="..//img/stanley_2_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 24-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley manual">
+    <div class="card">
+        <img src="..//img/stanley_3_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 25-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: manual<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley electrica">
+    <div class="card">
+        <img src="..//img/stanley_2_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 26-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: electrica<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4 mb-3 tool-card stanley electrica">
+    <div class="card">
+        <img src="..//img/stanley_3_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 27-->
+        <div class="card-body">
+          <h5 class="card-title">Que se supone que es </h5>
+          <p class="card-text">Tipo: electrica<br>Marca: stanley</p>
+        </div>
+      </div>
+    </div>
+
+                <!--El espacio de java script-->
+
+</div>
+</div>
+
+<script>
+  const brandFilter = document.getElementById("brandFilter");
+  const typeFilter = document.getElementById("typeFilter");
+  const tools = document.querySelectorAll(".tool-card");
+
+  function filterTools() {
+    const brand = brandFilter.value;
+    const type = typeFilter.value;
+
+    tools.forEach(tool => {
+      const matchBrand = brand === "all" || tool.classList.contains(brand);
+      const matchType = type === "all" || tool.classList.contains(type);
+      tool.classList.toggle("active", matchBrand && matchType);
+    });
+  }
+
+  brandFilter.addEventListener("change", filterTools);
+  typeFilter.addEventListener("change", filterTools);
+
+  // Mostrar todos por defecto
+  filterTools();
+</script>
+
 </body>
 </html>
