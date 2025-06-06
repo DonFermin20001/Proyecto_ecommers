@@ -1,3 +1,68 @@
 .body{
     color: #000;
 }
+header {
+    background-color: var(--primary);
+    color: black;
+    padding: 1rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  header .cart {
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  nav {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .pagination a {
+    padding: 0.5rem 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid #ccc;
+    text-decoration: none;
+    border-radius: 5px;
+    color: var(--text-color);
+  }
+  .tool-card {
+    display: none;
+  }
+  .tool-card.active {
+    display: block;
+  }
