@@ -1,22 +1,30 @@
 // Alquiler
-const brandFilter = document.getElementById("brandFilter");
-  const typeFilter = document.getElementById("typeFilter");
-  const tools = document.querySelectorAll(".tool-card");
+  document.addEventListener('DOMContentLoaded', function () {
+    const brandFilter = document.getElementById('brandFilter');
+    const typeFilter = document.getElementById('typeFilter');
+    const toolCards = document.querySelectorAll('.tool-card');
 
-  function filterTools() {
-    const brand = brandFilter.value;
-    const type = typeFilter.value;
+    function filterTools() {
+      const selectedBrand = brandFilter.value.toLowerCase();
+      const selectedType = typeFilter.value.toLowerCase();
 
-    tools.forEach(tool => {
-      const matchBrand = brand === "all" || tool.classList.contains(brand);
-      const matchType = type === "all" || tool.classList.contains(type);
-      tool.classList.toggle("active", matchBrand && matchType);
-    });
-  }
+      toolCards.forEach(card => {
+        const cardClasses = card.className.toLowerCase();
 
-  brandFilter.addEventListener("change", filterTools);
-  typeFilter.addEventListener("change", filterTools);
+        const matchBrand = selectedBrand === 'all' || cardClasses.includes(selectedBrand);
+        const matchType = selectedType === 'all' || cardClasses.includes(selectedType);
 
-  // Mostrar todos por defecto
-  filterTools();
-  
+        if (matchBrand && matchType) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    brandFilter.addEventListener('change', filterTools);
+    typeFilter.addEventListener('change', filterTools);
+
+    // Inicializar con todos visibles
+    filterTools();
+  });
