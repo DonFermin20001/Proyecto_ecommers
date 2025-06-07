@@ -28,6 +28,19 @@ header {
     text-decoration: none;
     font-weight: bold;
   }
+  .container-ha{
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .container-ha a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+  }
   .container {
     max-width: 1200px;
     margin: 2rem auto;
