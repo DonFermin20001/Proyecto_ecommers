@@ -15,19 +15,6 @@ header {
     font-size: 1.2rem;
     cursor: pointer;
   }
-  nav {
-    background-color: var(--card-bg);
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  nav a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: bold;
-  }
   .container-ha{
     background-color: var(--card-bg);
     display: flex;
@@ -59,23 +46,21 @@ header {
     position: relative;
     animation: fadeIn 0.8s ease-in-out;
   }
-  .pagination {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  .pagination a {
-    padding: 0.5rem 1rem;
-    background-color: var(--card-bg);
-    border: 1px solid #ccc;
-    text-decoration: none;
-    border-radius: 5px;
-    color: var(--text-color);
-  }
-  .tool-card {
-    display: none;
-  }
-  .tool-card.active {
-    display: block;
-  }
+  .btn-agregar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.btn-agregar:hover {
+  background-color: #218838;
+}
+
+  

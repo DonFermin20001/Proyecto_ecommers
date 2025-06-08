@@ -28,3 +28,30 @@
     // Inicializar con todos visibles
     filterTools();
   });
+
+// carrito 
+let carrito = [];
+
+function addCart(producto) {
+  carrito.push(producto);
+  actualizarContador();
+  mostrarNotificacion(producto.nombre);
+}
+
+function actualizarContador() {
+  document.getElementById("count").textContent = carrito.length;
+}
+
+function listcart() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío.");
+    return;
+  }
+
+  let listado = "Productos en el carrito:\n\n";
+  carrito.forEach((item, index) => {
+    listado += `${index + 1}. ${item.nombre} - $${item.valor.toFixed(2)}\n`;
+  });
+
+  alert(listado); 
+}

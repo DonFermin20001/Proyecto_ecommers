@@ -1,385 +1,328 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>ToolsStore | Ventas</title>
+  <title>ToolsStore | Alquiler</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
-<style>
-    .tool-card {
-      display: none;
-    }
-    .tool-card.active {
-      display: block;
-    }
-  </style>
-  
-
+  <link rel="stylesheet" href="../front/estilos.css">
 </head>
 
 <body class="bg-light">
   <center>
-        <h1 class="text-center">Alquiler de Herramientas</h1>
+    <h1 class="text-center">Alquiler de Herramientas</h1>
     <p>Las mejores herramientas al mejor precio y a solo un clic de distancia</p>
-      <div class="cart" onclick="listcart()">🛒 <span id="count">0</span></div>
-  <div class="container-ha">
-    <a href="index.html">Inicio</a>
-    <a href="ventas.html">Venta</a>
-    <a href="kits.html">Kits</a> 
-  </div>
+    <div class="cart" onclick="listcart()">🛒 <span id="count">0</span></div>
+    <div class="container-ha">
+      <a href="index.html">Inicio</a>
+      <a href="ventas.html">Venta</a>
+      <a href="kits.html">Kits</a>
+    </div>
   </center>
 
   <div class="container my-4">
-  <!-- Filtros -->
-  <div class="row mb-4">
-    <div class="col-md-6">
-      <label>Filtrar por marca:</label>
-      <select id="brandFilter" class="form-select">
-        <option value="all">Todas</option>
-        <option value="cat">CAT</option>
-        <option value="dewalt">DeWalt</option>
-        <option value="stanley">Stanley</option>
-      </select>
+    <!-- Filtros -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <label>Filtrar por marca:</label>
+        <select id="brandFilter" class="form-select">
+          <option value="all">Todas</option>
+          <option value="cat">CAT</option>
+          <option value="dewalt">DeWalt</option>
+          <option value="stanley">Stanley</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label>Filtrar por tipo:</label>
+        <select id="typeFilter" class="form-select">
+          <option value="all">Todos</option>
+          <option value="corte">Corte</option>
+          <option value="manual">Manual</option>
+          <option value="electrica">Eléctrica</option>
+          <option value="medicion">Medición</option>
+        </select>
+      </div>
     </div>
-    <div class="col-md-6">
-      <label>Filtrar por tipo:</label>
-      <select id="typeFilter" class="form-select">
-        <option value="all">Todos</option>
-        <option value="corte">Corte</option>
-        <option value="manual">Manual</option>
-        <option value="electrica">Eléctrica</option>
-        <option value="medicion">Medición</option>
-      </select>
-    </div>
-  </div>
 
-                                <!-- Catálogo -->
+    <!-- Catálogo -->
     <!-- Agrega aquí los  27 ítems cambiando la clase según marca y tipo -->
+
     <div class="row" id="toolContainer">
 
-    <div class="col-md-4 mb-3 tool-card cat corte">
-      <div class="card">
-        <img src="../img/cat_1_corte.jpg" class="card-img-top" alt="Sierra de corte CAT"> <!--ítem 1-->
-        <div class="card-body">
-          <h5 class="card-title">cúter de seguridad marca CAT</h5>
-          <p class="card-text">Tipo: corte<br>Marca: CAT</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
+      <div class="col-md-4 mb-3 tool-card cat corte">
+        <div class="card">
+          <img src="../img/cat_1_corte.jpg" class="card-img-top" alt="Sierra de corte CAT"> <!--ítem 1-->
+          <div class="card-body">
+            <h5 class="card-title">cúter de seguridad marca CAT</h5>
+            <p class="card-text">Tipo: corte<br>Marca: CAT<br>Precio: $11.00/día</p>
+            <button class="btn-agregar"
+              onclick="addCart({nombre: 'Cuter de seguridad', valor: 11.00})">Alquilar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt corte">
+
+        <div class="card">
+          <img src="../img/dewalt_1_corte.jpg" class="card-img-top" alt="Sierra de corte Dewalt">
+          <div class="card-body">
+            <h5 class="card-title">Amoladora angular Dewalt</h5>
+            <p class="card-text">Tipo: Corte<br>Marca: Dewalt<br>Precio: $18.00/día</p>
+            <button class="btn-agregar"onclick="addCart({nombre: 'Amoladora Angular Dewalt', valor: 18.00})">Alquilar</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 mb-3 tool-card stanley electrica">
+
+        <div class="card">
+          <img src="../img/stanley_1_electrico.jpg" class="card-img-top" alt="Esmeril De Banco"> <!--ítem 3-->
+          <div class="card-body">
+            <h5 class="card-title">esmeril de banco Stanley</h5>
+            <p class="card-text">Tipo: electrica<br>Marca: stanley<br>Precio: $28.00/día</p>
+            <button class="btn-agregar" onclick="addCart({nombre: 'Esmeril De Banco', valor: 28.00})">Alquilar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat electrica">
+        <div class="card">
+          <img src="../img/cat_1_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 4-->
+          <div class="card-body">
+            <h5 class="card-title">taladro atornillador percutor inalámbrico Cat</h5>
+            <p class="card-text">Tipo: electrica<br>Marca: cat<br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'taladro atornillador', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 mb-3 tool-card stanley medicion">
+        <div class="card">
+          <img src="../img/stanley_1_medición.jpg" class="card-img-top" alt="Que se supone que es stanley">
+          <!--ítem 5-->
+          <div class="card-body">
+            <h5 class="card-title">cinta métrica Stanley</h5>
+            <p class="card-text">Tipo: medicion<br>Marca: stanley<br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'cinta métrica', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt medicion">
+        <div class="card">
+          <img src="../img/dewalt_1_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 6-->
+          <div class="card-body">
+            <h5 class="card-title"> sierra de calar DeWalt </h5>
+            <p class="card-text">Tipo: medicion<br>Marca: dewalt<br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'sierra de calar', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat manual">
+        <div class="card">
+          <img src="../img/cat_1_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 7-->
+          <div class="card-body">
+            <h5 class="card-title"> lijadora orbital de la marca CAT </h5>
+            <p class="card-text">Tipo: manual<br>Marca: cat<br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'lijadora orbital', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat manual">
+        <div class="card">
+          <img src="../img/cat_2_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 8-->
+          <div class="card-body">
+            <h5 class="card-title"> una linterna CAT </h5>
+            <p class="card-text">Tipo: manual<br>Marca: cat<br>Precio: $50.000<caption></caption></p>
+            <button class="btn-agregar" onclick="addCart({nombre:'linterna CAT', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat manual">
+        <div class="card">
+          <img src="../img/cat_3_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 9-->
+          <div class="card-body">
+            <h5 class="card-title"> Pulidora profesional </h5>
+            <p class="card-text">Tipo: manual<br>Marca: cat<br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'Pulidora profesional', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat corte">
+        <div class="card">
+          <img src="../img/cat_2_corte.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 10-->
+          <div class="card-body">
+            <h5 class="card-title"> juego de multiherramientas Cat </h5>
+            <p class="card-text">Tipo: corte<br>Marca: cat <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'juego de multiherramientas', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat corte">
+        <div class="card">
+          <img src="../img/cat_3_corte.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 11-->
+          <div class="card-body">
+            <h5 class="card-title"> sierra recíproca CAT </h5>
+            <p class="card-text">Tipo: corte<br>Marca: cat <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'Sierra reciproca', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat electrica">
+        <div class="card">
+          <img src="../img/cat_2_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 12-->
+          <div class="card-body">
+            <h5 class="card-title"> sierra caladora inalámbrica Cat </h5>
+            <p class="card-text">Tipo: electrica<br>Marca: cat <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'Sierra caladora inalambrica', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card cat electrica">
+        <div class="card">
+          <img src="../img/cat_3_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 13-->
+          <div class="card-body">
+            <h5 class="card-title"> Rotomartillo Cat </h5>
+            <p class="card-text">Tipo: electrica<br>Marca: cat <br>Precio: $50.000</p>
+             <button class="btn-agregar" onclick="addCart({nombre:'Rotomartillo', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt manual">
+        <div class="card">
+          <img src="../img/dewalt_1_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 14-->
+          <div class="card-body">
+            <h5 class="card-title"> Taladro 1/2 Percutor Dewalt </h5>
+            <p class="card-text">Tipo: manual<br>Marca: dewalt <br>Precio: $50.000</p>
+             <button class="btn-agregar" onclick="addCart({nombre:'Taladro !/2 Percutor', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt manual">
+        <div class="card">
+          <img src="../img/dewalt_2_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 15-->
+          <div class="card-body">
+            <h5 class="card-title">Taladro perforador Dewalt </h5>
+            <p class="card-text">Tipo: manual<br>Marca: dewalt <br>Precio: $50.000</p>
+             <button class="btn-agregar" onclick="addCart({nombre:'Taladro perforador', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt manual">
+        <div class="card">
+          <img src="../img/dewalt_3_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 16-->
+          <div class="card-body">
+            <h5 class="card-title">Tijeras de jardineria Dewalt </h5>
+            <p class="card-text">Tipo: manual<br>Marca: dewalt <br>Precio: $50.000</p>
+             <button class="btn-agregar" onclick="addCart({nombre:'Tijeras de jardineria Dewalt', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt corte">
+        <div class="card">
+          <img src="../img/dewalt_2_corte.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 17-->
+          <div class="card-body">
+            <h5 class="card-title"> taladro atornillador inalámbrico DeWalt </h5>
+            <p class="card-text">Tipo: corte<br>Marca: dewalt <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'Taladro atornillador inalambrico', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt corte">
+        <div class="card">
+          <img src="../img/dewalt_3_corte.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 18-->
+          <div class="card-body">
+            <h5 class="card-title"> podadora eléctrica DeWalt de 18V XR </h5>
+            <p class="card-text">Tipo: corte<br>Marca: dewalt <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'podadora electrica', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt medicion">
+        <div class="card">
+          <img src="../img/dewalt_2_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 19-->
+          <div class="card-body">
+            <h5 class="card-title"> rotomartillo Dewalt D25133K-B3 </h5>
+            <p class="card-text">Tipo: medicion<br>Marca: dewalt <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'Rotomartillo D25133k-B3', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card dewalt medicion">
+        <div class="card">
+          <img src="../img/dewalt_3_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 20-->
+          <div class="card-body">
+            <h5 class="card-title"> Cinta metrica laser DeWalt</h5>
+            <p class="card-text">Tipo: medicion<br>Marca: dewalt <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'Cinta metrica laser', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card stanley manual">
+        <div class="card">
+          <img src="../img/stanley_1_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 23-->
+          <div class="card-body">
+            <h5 class="card-title"> fresadora Stanley </h5>
+            <p class="card-text">Tipo: manual<br>Marca: stanley <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'multiherramienta oscilante', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card stanley manual">
+        <div class="card">
+          <img src="../img/stanley_3_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 25-->
+          <div class="card-body">
+            <h5 class="card-title"> Multiherramienta oscilante stanley </h5>
+            <p class="card-text">Tipo: manual<br>Marca: stanley <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'multiherramienta oscilante', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card stanley electrica">
+        <div class="card">
+          <img src="../img/stanley_2_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley">
+          <!--ítem 26-->
+          <div class="card-body">
+            <h5 class="card-title"> una fresadora Stanley SRR1200 </h5>
+            <p class="card-text">Tipo: electrica<br>Marca: stanley <br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:' fresadora Stanley', valor: 50.000})">Alquilar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3 tool-card stanley electrica">
+        <div class="card">
+          <img src="../img/stanley_3_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley">
+          <!--ítem 27-->
+          <div class="card-body">
+            <h5 class="card-title"> sierra de corte Stanley 18V Sfmce200B-Xj </h5>
+            <p class="card-text">Tipo: electrica<br>Marca: stanley<br>Precio: $50.000</p>
+            <button class="btn-agregar" onclick="addCart({nombre:'sierra de corte', valor: 50.000})">Alquilar</a>
+          </div>
         </div>
       </div>
     </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt corte">
-
-    <div class="card">
-        <img src="../img/dewalt_1_corte.jpg" class="card-img-top" alt="Sierra de corte dewalt"> <!--ítem 2-->
-        <div class="card-body">
-          <h5 class="card-title">una amoladora angular Dewalt</h5>
-          <p class="card-text">Tipo: corte<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley electrica">
-
-    <div class="card">
-        <img src="../img/stanley_1_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 3-->
-        <div class="card-body">
-          <h5 class="card-title">esmeril de banco Stanley</h5>
-          <p class="card-text">Tipo: electrica<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat electrica">
-    <div class="card">
-        <img src="../img/cat_1_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 4-->
-        <div class="card-body">
-          <h5 class="card-title">taladro atornillador percutor inalámbrico Cat</h5>
-          <p class="card-text">Tipo: electrica<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-
-<div class="col-md-4 mb-3 tool-card stanley medicion">
-    <div class="card">
-        <img src="../img/stanley_1_medición.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 5-->
-        <div class="card-body">
-          <h5 class="card-title">cinta métrica Stanley</h5>
-          <p class="card-text">Tipo: medicion<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt medicion">
-    <div class="card">
-        <img src="../img/dewalt_1_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 6-->
-        <div class="card-body">
-          <h5 class="card-title"> sierra de calar DeWalt </h5>
-          <p class="card-text">Tipo: medicion<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat manual">
-    <div class="card">
-        <img src="../img/cat_1_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 7-->
-        <div class="card-body">
-          <h5 class="card-title"> lijadora orbital de la marca CAT </h5>
-          <p class="card-text">Tipo: manual<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat manual">
-    <div class="card">
-        <img src="../img/cat_2_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 8-->
-        <div class="card-body">
-          <h5 class="card-title"> una linterna CAT </h5>
-          <p class="card-text">Tipo: manual<br>Marca: cat<caption></caption></p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat manual">
-    <div class="card">
-        <img src="../img/cat_3_manual.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 9-->
-        <div class="card-body">
-          <h5 class="card-title"> Pulidora profesional </h5>
-          <p class="card-text">Tipo: manual<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat corte">
-    <div class="card">
-        <img src="../img/cat_2_corte.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 10-->
-        <div class="card-body">
-          <h5 class="card-title"> juego de multiherramientas Cat </h5>
-          <p class="card-text">Tipo: corte<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat corte">
-    <div class="card">
-        <img src="../img/cat_3_corte.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 11-->
-        <div class="card-body">
-          <h5 class="card-title">  sierra recíproca CAT </h5>
-          <p class="card-text">Tipo: corte<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat electrica">
-    <div class="card">
-        <img src="../img/cat_2_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 12-->
-        <div class="card-body">
-          <h5 class="card-title">  sierra caladora inalámbrica Cat </h5>
-          <p class="card-text">Tipo: electrica<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card cat electrica">
-    <div class="card">
-        <img src="../img/cat_3_electrico.jpg" class="card-img-top" alt="Que se supone que es cat"> <!--ítem 13-->
-        <div class="card-body">
-          <h5 class="card-title"> Rotomartillo Cat </h5>
-          <p class="card-text">Tipo: electrica<br>Marca: cat</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt manual">
-    <div class="card">
-        <img src="../img/dewalt_1_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 14-->
-        <div class="card-body">
-          <h5 class="card-title"> Taladro 1/2 Percutor Dewalt </h5>
-          <p class="card-text">Tipo: manual<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt manual">
-    <div class="card">
-        <img src="../img/dewalt_2_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 15-->
-        <div class="card-body">
-          <h5 class="card-title">Que se supone que es </h5>
-          <p class="card-text">Tipo: manual<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt manual">
-    <div class="card">
-        <img src="../img/dewalt_3_manual.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 16-->
-        <div class="card-body">
-          <h5 class="card-title">Que se supone que es </h5>
-          <p class="card-text">Tipo: manual<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt corte">
-    <div class="card">
-        <img src="../img/dewalt_2_corte.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 17-->
-        <div class="card-body">
-          <h5 class="card-title">  taladro atornillador inalámbrico DeWalt </h5>
-          <p class="card-text">Tipo: corte<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt corte">
-    <div class="card">
-        <img src="../img/dewalt_3_corte.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 18-->
-        <div class="card-body">
-          <h5 class="card-title"> podadora eléctrica DeWalt de 18V XR </h5>
-          <p class="card-text">Tipo: corte<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt medicion">
-    <div class="card">
-        <img src="../img/dewalt_2_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 19-->
-        <div class="card-body">
-          <h5 class="card-title"> rotomartillo Dewalt D25133K-B3 </h5>
-          <p class="card-text">Tipo: medicion<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card dewalt medicion">
-    <div class="card">
-        <img src="../img/dewalt_3_medición.jpg" class="card-img-top" alt="Que se supone que es dewalt"> <!--ítem 20-->
-        <div class="card-body">
-          <h5 class="card-title"> multiherramienta oscilante DeWalt DCS356N </h5>
-          <p class="card-text">Tipo: medicion<br>Marca: dewalt</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley medicion">
-    <div class="card">
-        <img src="../img/stanley_2_medición.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 21-->
-        <div class="card-body">
-          <h5 class="card-title"> metales DeWalt modelo D28730 </h5>
-          <p class="card-text">Tipo: medicion<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley medicion">
-    <div class="card">
-        <img src="../img/stanley_3_medición.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 22-->
-        <div class="card-body">
-          <h5 class="card-title"> medidor láser DeWalt DWHT77100-XJ </h5>
-          <p class="card-text">Tipo: medicion<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley manual">
-    <div class="card">
-        <img src="../img/stanley_1_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 23-->
-        <div class="card-body">
-          <h5 class="card-title">  herramientas mecánicas de 120 piezas de Stanley </h5>
-          <p class="card-text">Tipo: manual<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley manual">
-    <div class="card">
-        <img src="../img/stanley_3_manual.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 25-->
-        <div class="card-body">
-          <h5 class="card-title">  Herramientas Mecanicas X 145 Pzs.stanley </h5>
-          <p class="card-text">Tipo: manual<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley electrica">
-    <div class="card">
-        <img src="../img/stanley_2_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 26-->
-        <div class="card-body">
-          <h5 class="card-title">  una fresadora Stanley SRR1200 </h5>
-          <p class="card-text">Tipo: electrica<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-<div class="col-md-4 mb-3 tool-card stanley electrica">
-    <div class="card">
-        <img src="../img/stanley_3_electrico.jpg" class="card-img-top" alt="Que se supone que es stanley"> <!--ítem 27-->
-        <div class="card-body">
-          <h5 class="card-title"> sierra de corte Stanley 18V Sfmce200B-Xj </h5>
-          <p class="card-text">Tipo: electrica<br>Marca: stanley</p>
-          <a href="#" class="btn btn-primary mt-2">Alquilar</a>
-        </div>
-      </div>
-    </div>
-
-
-
-</div>
-</div>
-<script >
-  
-  document.addEventListener('DOMContentLoaded', function () {
-    const brandFilter = document.getElementById('brandFilter');
-    const typeFilter = document.getElementById('typeFilter');
-    const toolCards = document.querySelectorAll('.tool-card');
-
-    function filterTools() {
-      const brand = brandFilter.value;
-      const type = typeFilter.value;
-
-      toolCards.forEach(card => {
-        const matchesBrand = brand === 'all' || card.classList.contains(brand);
-        const matchesType = type === 'all' || card.classList.contains(type);
-
-        if (matchesBrand && matchesType) {
-          card.classList.add('active');
-        } else {
-          card.classList.remove('active');
-        }
-      });
-    }
-
-    brandFilter.addEventListener('change', filterTools);
-    typeFilter.addEventListener('change', filterTools);
-
-    // Mostrar todas al cargar
-    filterTools();
-  });
-</script>
-
+  </div>
+  <script src="..//back/pagina.js"></script>
 </body>
+
 </html>
