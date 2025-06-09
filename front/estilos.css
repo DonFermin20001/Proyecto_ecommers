@@ -119,3 +119,37 @@ div > img{
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 300px;
+  height: 100%;
+  color: #000;
+  background-color: #cfc204;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+#cartItems {
+  margin-top: 20px;
+}
+
+.cart-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}

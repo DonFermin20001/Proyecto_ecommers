@@ -14,7 +14,13 @@
     <header>
     <h1 class="text-center">Kits de Herramientas</h1>
     <p>Las mejores herramientas al mejor precio y a solo un clic de distancia</p>
-    <div class="cart" onclick="listcart()">🛒 <span id="count">0</span></div>
+    <div class="cart" onclick="toggleSidebar()">🛒 <span id="count">0</span></div>
+    <!-- Sidebar del carrito -->
+    <div id="cartSidebar" class="sidebar">
+      <h2>Carrito</h2>
+      <div id="cartItems"></div>
+      <button onclick="toggleSidebar()">Cerrar</button>
+    </div>
     </header>
     <div class="container-ha">
       <a href="index.html">Inicio</a>

@@ -38,6 +38,7 @@ let carrito = [];
 function addCart(producto) {
   carrito.push(producto);
   actualizarContador();
+  actualizarSidebar();
   mostrarNotificacion(producto.nombre);
 }
 
@@ -45,18 +46,31 @@ function actualizarContador() {
   document.getElementById("count").textContent = carrito.length;
 }
 
-function listcart() {
+function toggleSidebar() {
+  document.getElementById("cartSidebar").classList.toggle("open");
+}
+
+function actualizarSidebar() {
+  const cartItemsContainer = document.getElementById("cartItems");
+  cartItemsContainer.innerHTML = "";
+
   if (carrito.length === 0) {
-    alert("El carrito está vacío.");
+    cartItemsContainer.innerHTML = "<p>El carrito está vacío.</p>";
     return;
   }
 
-  let listado = "Productos en el carrito:\n\n";
   carrito.forEach((item, index) => {
-    listado += `${index + 1}. ${item.nombre} - $${item.valor.toFixed(2)}\n`;
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "cart-item";
+    itemDiv.textContent = `${index + 1}. ${item.nombre} - $${item.valor.toFixed(2)}`;
+    itemDiv.innerHTML = `
+      <img src="${item.src}" alt="${item.nombre}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 10px;">
+      <div style="display: inline-block; vertical-align: top;">
+        <strong>${item.nombre}</strong><br>
+        $${item.valor.toFixed(2)}
+      </div>`;
+    cartItemsContainer.appendChild(itemDiv);
   });
-
-  alert(listado); 
 }
 
 // kits
