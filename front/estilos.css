@@ -84,3 +84,38 @@ div > img{
   ;
   gap: 32px;
 }
+
+.kit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.carrusel-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carrusel-vertical img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.imagen-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-principal img {
+  max-width: 400px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}

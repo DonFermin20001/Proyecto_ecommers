@@ -53,8 +53,14 @@ function listcart() {
 
   let listado = "Productos en el carrito:\n\n";
   carrito.forEach((item, index) => {
-    listado += '${index + 1}. ${item.nombre} - $${item.valor.toFixed(2)}\n';
+    listado += `${index + 1}. ${item.nombre} - $${item.valor.toFixed(2)}\n`;
   });
 
   alert(listado); 
 }
+
+// kits
+  function cambiarImagenPrincipal(src) {
+    document.getElementById("imagen-principal").src = src;
+  }
+
