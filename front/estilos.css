@@ -21,6 +21,11 @@ header {
     font-size: 1.2rem;
     cursor: pointer;
   }
+  .col-md-6{
+    width: fit-content;
+    background-color: aliceblue;
+    position-anchor: 60px;
+  }
   .container-ha{
     background-color: var(--card-bg);
     display: flex;
@@ -34,14 +39,11 @@ header {
     text-decoration: none;
     font-weight: bold;
   }
-  .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
   .products {
+    max-width: 100%;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 2rem;
   }
   .card {
