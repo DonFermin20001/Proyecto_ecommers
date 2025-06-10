@@ -35,6 +35,23 @@
 // carrito 
 let carrito = [];
 
+function addCarrito(boton) {
+  const productoDiv = boton.closest(".card"); // Subimos al div que contiene todo
+
+  const nombre = productoDiv.querySelector(".card-title").textContent;
+  const precioTexto = productoDiv.querySelector(".card-text").textContent;
+  const imagen = productoDiv.querySelector(".card-img-top").getAttribute("src");
+
+  const valor = parseFloat(precioTexto.replace(/[^0-9.]/g, "")); // Elimina $ y convierte a número
+
+  const producto = {
+    nombre: nombre,
+    valor: valor,
+    imagen: imagen
+  };
+
+  addCart(producto); // Ya la tienes definida
+}
 function addCart(producto) {
   carrito.push(producto);
   actualizarContador();
@@ -64,7 +81,7 @@ function actualizarSidebar() {
     itemDiv.className = "cart-item";
     itemDiv.textContent = `${index + 1}. ${item.nombre} - $${item.valor.toFixed(2)}`;
     itemDiv.innerHTML = `
-      <img src="${item.src}" alt="${item.nombre}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 10px;">
+      <img src="${item.imagen}" alt="${item.nombre}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 10px;">
       <div style="display: inline-block; vertical-align: top;">
         <strong>${item.nombre}</strong><br>
         $${item.valor.toFixed(2)}

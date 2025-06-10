@@ -39,7 +39,7 @@
           <div class="card-body">
             <h5 class="card-title"> podadora eléctrica DeWalt de 18V XR </h5>
             <p class="card-text">$50.000</p>
-            <button class="btn-agregar" onclick="addCart({nombre:'podadora electrica', valor: 50.000})">Agregar</a>
+            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'podadora electrica', valor: 50.000})">Agregar</a>
           </div>
         </div>
 
@@ -48,7 +48,7 @@
           <div class="card-body">
             <h5 class="card-title">cúter de seguridad marca CAT</h5>
             <p class="card-text">$11.00</p>
-            <button class="btn-agregar" onclick="addCart({nombre: 'Cuter de seguridad', valor: 11.00})">Agregar</button>
+            <button class="btn-agregar" onclick="addCarrito(this)({nombre: 'Cuter de seguridad', valor: 11.00})">Agregar</button>
           </div>
         </div>
 
@@ -57,7 +57,7 @@
           <div class="card-body">
             <h5 class="card-title">taladro atornillador percutor inalámbrico Cat</h5>
             <p class="card-text">$50.000</p>
-            <button class="btn-agregar" onclick="addCart({nombre:'taladro atornillador', valor: 50.000})">Agregar</a>
+            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'taladro atornillador', valor: 50.000})">Agregar</a>
           </div>
         </div>
 
@@ -66,26 +66,38 @@
           <div class="card-body">
             <h5 class="card-title">Taladro perforador Dewalt </h5>
             <p class="card-text">$50.000</p>
-            <button class="btn-agregar" onclick="addCart({nombre:'Taladro perforador', valor: 50.000})">Agregar</a>
+            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'Taladro perforador', valor: 50.000})">Agregar</a>
           </div>
         </div>
-
     </div>
+  </div>
 
-    <script src="../back/pagina.js"></script>
+  <footer class="footer">
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <p>Email: contacto@toolsstore.com</p>
+      <p>Tel: +123 456 7890</p>
+    </div>
+  
+    <div class="footer-section">
+      <h4>Nosotros</h4>
+      <p>
+        En ToolsStore nos apasiona brindarte las mejores herramientas con facilidad y confianza. Nuestro objetivo es
+        simplificar tu trabajo, sea cual sea el proyecto.
+      </p>
+    </div>
+  
+    <div class="footer-section">
+      <h4>Siguenos En Nuestras Redes Sociales</h4>
+      <p>
+        <a href="https://www.facebook.com/tu_usuario" target="_blank"><i class="fab fa-facebook fa-2x text-primary"></i></a>
+        <a href="https://www.instagram.com/tu_usuario" target="_blank"><i class="fab fa-instagram fa-2x text-danger"></i></a>
+        <a href="https://x.com/tu_usuario" target="_blank"><i class="fab fa-x-twitter fa-2x text-dark"></i></a>
+      </p>
+    </div>
+  </footer>
 
-    <footer class="text-center mt-5">
-  <h5>Síguenos en redes sociales</h5>
-  <a href="https://www.facebook.com/tu_usuario" target="_blank" class="me-3 text-decoration-none">
-    <i class="fab fa-facebook fa-2x text-primary"></i>
-  </a>
-  <a href="https://www.instagram.com/tu_usuario" target="_blank" class="me-3 text-decoration-none">
-    <i class="fab fa-instagram fa-2x text-danger"></i>
-  </a>
-  <a href="https://x.com/tu_usuario" target="_blank" class="text-decoration-none">
-    <i class="fab fa-x-twitter fa-2x text-dark"></i>
-  </a>
-</footer>
+<script src="../back/pagina.js"></script>
 </body>
 
 </html>

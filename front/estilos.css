@@ -119,6 +119,59 @@ div > img{
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+
+.tool-item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.tool-item img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+.tool-info h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.tool-info p {
+  margin: 0.2rem 0;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #333;
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin: 1rem;
+  max-width: 300px;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #f0ad4e;
+  padding-bottom: 0.4rem;
+}
+
+.footer-section a {
+  color: #f0ad4e;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
