@@ -55,9 +55,11 @@ header {
     animation: fadeIn 0.8s ease-in-out;
   }
   .btn-agregar {
-  background-color: #28a745;
+  background-color: #1549f1;
+  transition: background-color 0.2s ease, transform 0.2s ease;
   color: white;
   border: none;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-weight: bold;
@@ -68,7 +70,8 @@ header {
 }
 
 .btn-agregar:hover {
-  background-color: #218838;
+  background-color: #1deff7;
+  transform: scale(1.05);
 }
 div > img{
   border-radius: 8px;
@@ -118,6 +121,8 @@ div > img{
   max-width: 400px;
   border-radius: 10px;
   margin-bottom: 1rem;
+  aspect-ratio: 1/1;
+  object-fit: contain;
 }
 
 .tool-item {
@@ -144,7 +149,7 @@ div > img{
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: #333;
-  color: white;
+  color: #fff;
   padding: 2rem 1rem;
   margin-top: 3rem;
   font-size: 0.95rem;
@@ -178,8 +183,8 @@ div > img{
   right: -350px;
   width: 300px;
   height: 100%;
-  color: #000;
-  background-color: #cfc204;
+  color: #333333;
+  background-color: #F7DC6F;
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0,0,0,0.3);
   transition: right 0.3s ease;
