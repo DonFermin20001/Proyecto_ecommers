@@ -20,7 +20,8 @@
       <div id="cartSidebar" class="sidebar">
         <h2>Carrito</h2>
         <div id="cartItems"></div>
-        <button onclick="toggleSidebar()">Cerrar</button>
+        <button onclick="enviarCarrito()" class="btn btn-primary mt-3">Confirmar carrito</button>
+        <button onclick="toggleSidebar()" class="btn btn-primary mt-3">Cerrar</button>
       </div>
     </header>
     <div class="container-ha">
@@ -69,14 +70,13 @@
 
       <div class="col-md-4 mb-3 tool-card cat corte nuevo">
         <div class="card">
-          <img src="../img/cat_1_corte_El cúter de seguridad.jpg" class="card-img-top" >
+          <img src="../img/cat_1_corte_El cúter de seguridad.jpg" class="card-img-top">
           <!--ítem 1-->
           <div class="card-body">
             <h5 class="card-title">cúter de seguridad marca CAT</h5>
-            <p class="card-text">Tipo: corte<br>Marca: CAT<br>Precio: $ 
-80.378</p>
-            <button class="btn-agregar"
-              onclick="addCarrito(this)({nombre: 'Cuter de seguridad', valor: 
+            <p class="card-text">Tipo: corte<br>Marca: CAT<br>Precio: $
+              80.378</p>
+            <button class="btn-agregar" onclick="addCarrito(this)({nombre: 'Cuter de seguridad', valor: 
 80.378})">Comprar</button>
           </div>
         </div>
@@ -84,7 +84,7 @@
 
       <div class="col-md-4 mb-3 tool-card dewalt corte usado">
         <div class="card">
-          <img src="../img/dewalt_1_corte_amoladora angular.jpg" class="card-img-top" >
+          <img src="../img/dewalt_1_corte_amoladora angular.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Amoladora angular Dewalt</h5>
             <p class="card-text">Tipo: Corte<br>Marca: Dewalt<br>Precio: $1.000000</p>
@@ -98,12 +98,13 @@
 
       <div class="col-md-4 mb-3 tool-card stanley electrica nuevo">
         <div class="card">
-          <img src="../img/stanley_1_electrico_ amoladora de banco.jpg" class="card-img-top" >
+          <img src="../img/stanley_1_electrico_ amoladora de banco.jpg" class="card-img-top">
           <!--ítem 3-->
           <div class="card-body">
             <h5 class="card-title">esmeril de banco Stanley</h5>
             <p class="card-text">Tipo: electrica<br>Marca: stanley<br>Precio: $350.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre: 'Esmeril De Banco', valor: 350.000})">Comprar</button>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre: 'Esmeril De Banco', valor: 350.000})">Comprar</button>
           </div>
         </div>
       </div>
@@ -115,7 +116,8 @@
           <div class="card-body">
             <h5 class="card-title">taladro atornillador percutor inalámbrico Cat</h5>
             <p class="card-text">Tipo: electrica<br>Marca: cat<br>Precio: $ 1.700.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'taladro atornillador', valor: 1.700000})">Comprarr</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'taladro atornillador', valor: 1.700000})">Comprarr</a>
           </div>
         </div>
       </div>
@@ -140,7 +142,8 @@
           <div class="card-body">
             <h5 class="card-title"> sierra de calar DeWalt </h5>
             <p class="card-text">Tipo: medicion<br>Marca: dewalt<br>Precio: $500.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'sierra de calar', valor: 500.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'sierra de calar', valor: 500.000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -152,7 +155,8 @@
           <div class="card-body">
             <h5 class="card-title"> lijadora orbital de la marca CAT </h5>
             <p class="card-text">Tipo: manual<br>Marca: cat<br>Precio: $420.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'lijadora orbital', valor: 420.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'lijadora orbital', valor: 420.000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -177,14 +181,15 @@
           <div class="card-body">
             <h5 class="card-title"> Pulidora profesional </h5>
             <p class="card-text">Tipo: manual<br>Marca: cat<br>Precio: $235.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'Pulidora profesional', valor: 235.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'Pulidora profesional', valor: 235.000})">Comprar</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4 mb-3 tool-card cat corte usado">
         <div class="card">
-          <img src="../img/cat_2_corte_multiherramienta.jpg" class="card-img-top" >
+          <img src="../img/cat_2_corte_multiherramienta.jpg" class="card-img-top">
           <!--ítem 10-->
           <div class="card-body">
             <h5 class="card-title"> juego de multiherramientas Cat </h5>
@@ -202,7 +207,8 @@
           <div class="card-body">
             <h5 class="card-title"> sierra recíproca CAT </h5>
             <p class="card-text">Tipo: corte<br>Marca: cat <br>Precio: $652.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'Sierra reciproca', valor: 652.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'Sierra reciproca', valor: 652.000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -234,12 +240,13 @@
 
       <div class="col-md-4 mb-3 tool-card dewalt manual usado">
         <div class="card">
-          <img src="../img/dewalt_1_manual_taladro percutor.jpg" class="card-img-top" >
+          <img src="../img/dewalt_1_manual_taladro percutor.jpg" class="card-img-top">
           <!--ítem 14-->
           <div class="card-body">
             <h5 class="card-title"> Taladro 1/2 Percutor Dewalt </h5>
             <p class="card-text">Tipo: manual<br>Marca: dewalt <br>Precio: $ 384.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'Taladro !/2 Percutor', valor: 384.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'Taladro !/2 Percutor', valor: 384.000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -251,7 +258,8 @@
           <div class="card-body">
             <h5 class="card-title">Taladro perforador Dewalt </h5>
             <p class="card-text">Tipo: manual<br>Marca: dewalt <br>Precio: $ 1.000.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'Taladro perforador', valor: 1.000000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'Taladro perforador', valor: 1.000000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -289,7 +297,8 @@
           <div class="card-body">
             <h5 class="card-title"> podadora eléctrica DeWalt de 18V XR </h5>
             <p class="card-text">Tipo: corte<br>Marca: dewalt <br>Precio: $ 2.300.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'podadora electrica', valor: 2.300000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'podadora electrica', valor: 2.300000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -314,14 +323,15 @@
           <div class="card-body">
             <h5 class="card-title"> Cinta metrica laser DeWalt</h5>
             <p class="card-text">Tipo: medicion<br>Marca: dewalt <br>Precio: $80.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'Cinta metrica laser', valor: 80.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'Cinta metrica laser', valor: 80.000})">Comprar</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4 mb-3 tool-card stanley manual nuevo">
         <div class="card">
-          <img src="../img/stanley_1_manual_fresadora.jpg" class="card-img-top" >
+          <img src="../img/stanley_1_manual_fresadora.jpg" class="card-img-top">
           <!--ítem 23-->
           <div class="card-body">
             <h5 class="card-title"> fresadora Stanley </h5>
@@ -352,19 +362,21 @@
           <div class="card-body">
             <h5 class="card-title"> una fresadora Stanley SRR1200 </h5>
             <p class="card-text">Tipo: electrica<br>Marca: stanley <br>Precio: $750.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:' fresadora Stanley', valor: 750.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:' fresadora Stanley', valor: 750.000})">Comprar</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4 mb-3 tool-card stanley electrica nuevo">
         <div class="card">
-          <img src="../img/stanley_3_electrico.jpg" class="card-img-top" >
+          <img src="../img/stanley_3_electrico.jpg" class="card-img-top">
           <!--ítem 27-->
           <div class="card-body">
             <h5 class="card-title"> sierra de corte Stanley 18V Sfmce200B-Xj </h5>
             <p class="card-text">Tipo: electrica<br>Marca: stanley<br>Precio: $246.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:'sierra de corte', valor: 246.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:'sierra de corte', valor: 246.000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -375,7 +387,8 @@
           <div class="card-body">
             <h5 class="card-title">Dynagrip de 1 pulgada (25 mm) Stanley </h5>
             <p class="card-text">Tipo: manual<br>Marca: stanley <br>Precio: $30.000</p>
-            <button class="btn-agregar" onclick="addCarrito(this)({nombre:' fresadora Stanley', valor: 30.000})">Comprar</a>
+            <button class="btn-agregar"
+              onclick="addCarrito(this)({nombre:' fresadora Stanley', valor: 30.000})">Comprar</a>
           </div>
         </div>
       </div>
@@ -388,7 +401,7 @@
       <p>Email: contacto@toolsstore.com</p>
       <p>Tel: +123 456 7890</p>
     </div>
-  
+
     <div class="footer-section">
       <h4>Nosotros</h4>
       <p>
@@ -396,12 +409,14 @@
         simplificar tu trabajo, sea cual sea el proyecto.
       </p>
     </div>
-  
+
     <div class="footer-section">
       <h4>Siguenos En Nuestras Redes Sociales</h4>
       <p>
-        <a href="https://www.facebook.com/tu_usuario" target="_blank"><i class="fab fa-facebook fa-2x text-primary"></i></a>
-        <a href="https://www.instagram.com/tu_usuario" target="_blank"><i class="fab fa-instagram fa-2x text-danger"></i></a>
+        <a href="https://www.facebook.com/tu_usuario" target="_blank"><i
+            class="fab fa-facebook fa-2x text-primary"></i></a>
+        <a href="https://www.instagram.com/tu_usuario" target="_blank"><i
+            class="fab fa-instagram fa-2x text-danger"></i></a>
         <a href="https://x.com/tu_usuario" target="_blank"><i class="fab fa-x-twitter fa-2x text-dark"></i></a>
       </p>
     </div>

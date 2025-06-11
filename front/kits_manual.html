@@ -2,108 +2,109 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolsStore | Kit de mano </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../front/estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolsStore | Kit de mano </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../front/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="bg-light">
-    <center>
-        <header>
-            <h1 class="text-center">Kits de Herramientas</h1>
-            <p>Las mejores herramientas al mejor precio y a solo un clic de distancia</p>
-            <div class="cart" onclick="toggleSidebar()">🛒 <span id="count">0</span></div>
-            <!-- Sidebar del carrito -->
-            <div id="cartSidebar" class="sidebar">
-                <h2>Carrito</h2>
-                <div id="cartItems"></div>
-                <button onclick="toggleSidebar()">Cerrar</button>
-            </div>
-        </header>
-        <div class="container-ha">
-            <a href="index.html">Inicio</a>
-            <a href="ventas.html">Venta</a>
-            <a href="alquiler.html">Alquiler</a>
-            <a href="kits.html">Regresar</a>
-        </div>
-    </center>
-
-    <div class="kit-container">
-        <div class="carrusel-vertical">
-            <img src="../img/Kit_herramientas_de_mano_1.jpg" alt="Vista previa1"
-                onclick="cambiarImagenPrincipal(this.src)">
-            <img src="../img/Kit_herramientas_de_mano_2.jpg" alt="Vista previa1"
-                onclick="cambiarImagenPrincipal(this.src)">
-            <img src="../img/Kit_herramientas_de_mano_3.jpg" alt="Vista previa1"
-                onclick="cambiarImagenPrincipal(this.src)">
-        </div>
-
-        <div class="imagen-principal">
-            <img id="imagen-principal" src="../img/Kit_herramientas_de_mano_1.jpg" alt="Kit manual"
-                class="img-principal">
-        </div>
+  <center>
+    <header>
+      <h1 class="text-center">Kits de Herramientas</h1>
+      <p>Las mejores herramientas al mejor precio y a solo un clic de distancia</p>
+      <div class="cart" onclick="toggleSidebar()">🛒 <span id="count">0</span></div>
+      <!-- Sidebar del carrito -->
+      <div id="cartSidebar" class="sidebar">
+        <h2>Carrito</h2>
+        <div id="cartItems"></div>
+        <button onclick="enviarCarrito()" class="btn btn-primary mt-3">Confirmar carrito</button>
+        <button onclick="toggleSidebar()" class="btn btn-primary mt-3">Cerrar</button>
+      </div>
+    </header>
+    <div class="container-ha">
+      <a href="index.html">Inicio</a>
+      <a href="ventas.html">Venta</a>
+      <a href="alquiler.html">Alquiler</a>
+      <a href="kits.html">Regresar</a>
     </div>
-    <center>
-        
-            <a href="kits.html" class="btn-agregar">ir a Comprar</a>
-        
-    </center>
-    <hr>
-    <div class="tool-info h1"><h1>Descripcion</h1></div>
-<div class="tool-info p ">
+  </center>
+
+  <div class="kit-container">
+    <div class="carrusel-vertical">
+      <img src="../img/Kit_herramientas_de_mano_1.jpg" alt="Vista previa1" onclick="cambiarImagenPrincipal(this.src)">
+      <img src="../img/Kit_herramientas_de_mano_2.jpg" alt="Vista previa1" onclick="cambiarImagenPrincipal(this.src)">
+      <img src="../img/Kit_herramientas_de_mano_3.jpg" alt="Vista previa1" onclick="cambiarImagenPrincipal(this.src)">
+    </div>
+
+    <div class="imagen-principal">
+      <img id="imagen-principal" src="../img/Kit_herramientas_de_mano_1.jpg" alt="Kit manual" class="img-principal">
+    </div>
+  </div>
+  <center>
+
+    <a href="kits.html" class="btn-agregar">ir a Comprar</a>
+
+  </center>
+  <hr>
+  <div class="tool-info h1">
+    <h1>Descripcion</h1>
+  </div>
+  <div class="tool-info p ">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       Iusto dolore esse similique molestias illo facilis impedit
-       nesciunt corrupti voluptatem deleniti, eaque sint quibusdam?
-       Quo similique tempore, impedit pariatur magnam ipsum!</p><br>
-    </div>
-    
-       <div class="tool-item">
-        <img src="../img/Kit_herramientas_de_mano_2.jpg" alt="Lima metálica">
-        <div class="tool-info">
-          <h5>Lima metálica</h5>
-          <p>Para acabados finos en superficies metálicas.</p>
-          <p><strong>Precio individual:</strong> $10.00</p>
-        </div>
-      </div>
-      <div class="tool-item">
-        <img src="../img/Kit_herramientas_de_mano_3.jpg" alt="Lima metálica">
-        <div class="tool-info">
-          <h5>Lima metálica</h5>
-          <p>Para acabados finos en superficies metálicas.</p>
-          <p><strong>Precio individual:</strong> $10.00</p>
-        </div>
-      </div>
-      
+      Iusto dolore esse similique molestias illo facilis impedit
+      nesciunt corrupti voluptatem deleniti, eaque sint quibusdam?
+      Quo similique tempore, impedit pariatur magnam ipsum!</p><br>
+  </div>
 
-      <footer class="footer">
-        <div class="footer-section">
-          <h4>Contacto</h4>
-          <p>Email: contacto@toolsstore.com</p>
-          <p>Tel: +123 456 7890</p>
-        </div>
-      
-        <div class="footer-section">
-          <h4>Nosotros</h4>
-          <p>
-            En ToolsStore nos apasiona brindarte las mejores herramientas con facilidad y confianza. Nuestro objetivo es
-            simplificar tu trabajo, sea cual sea el proyecto.
-          </p>
-        </div>
-      
-        <div class="footer-section">
-          <h4>Siguenos En Nuestras Redes Sociales</h4>
-          <p>
-            <a href="https://www.facebook.com/tu_usuario" target="_blank"><i class="fab fa-facebook fa-2x text-primary"></i></a>
-            <a href="https://www.instagram.com/tu_usuario" target="_blank"><i class="fab fa-instagram fa-2x text-danger"></i></a>
-            <a href="https://x.com/tu_usuario" target="_blank"><i class="fab fa-x-twitter fa-2x text-dark"></i></a>
-          </p>
-        </div>
-      </footer>
-      
-    <script src="../back/pagina.js"></script>
+  <div class="tool-item">
+    <img src="../img/Kit_herramientas_de_mano_2.jpg" alt="Lima metálica">
+    <div class="tool-info">
+      <h5>Lima metálica</h5>
+      <p>Para acabados finos en superficies metálicas.</p>
+      <p><strong>Precio individual:</strong> $10.00</p>
+    </div>
+  </div>
+  <div class="tool-item">
+    <img src="../img/Kit_herramientas_de_mano_3.jpg" alt="Lima metálica">
+    <div class="tool-info">
+      <h5>Lima metálica</h5>
+      <p>Para acabados finos en superficies metálicas.</p>
+      <p><strong>Precio individual:</strong> $10.00</p>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <p>Email: contacto@toolsstore.com</p>
+      <p>Tel: +123 456 7890</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Nosotros</h4>
+      <p>
+        En ToolsStore nos apasiona brindarte las mejores herramientas con facilidad y confianza. Nuestro objetivo es
+        simplificar tu trabajo, sea cual sea el proyecto.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siguenos En Nuestras Redes Sociales</h4>
+      <p>
+        <a href="https://www.facebook.com/tu_usuario" target="_blank"><i
+            class="fab fa-facebook fa-2x text-primary"></i></a>
+        <a href="https://www.instagram.com/tu_usuario" target="_blank"><i
+            class="fab fa-instagram fa-2x text-danger"></i></a>
+        <a href="https://x.com/tu_usuario" target="_blank"><i class="fab fa-x-twitter fa-2x text-dark"></i></a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../back/pagina.js"></script>
 </body>
 
 </html>
