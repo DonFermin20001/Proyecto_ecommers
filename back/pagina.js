@@ -35,23 +35,27 @@
 // carrito 
 let carrito = [];
 
-function addCarrito(boton) {
-  const productoDiv = boton.closest(".card"); // Subimos al div que contiene todo
+function addCarrito(boton, tipo = "herramienta", modo = "venta", idItem = null) {
+  const productoDiv = boton.closest(".card");
 
   const nombre = productoDiv.querySelector(".card-title").textContent;
   const precioTexto = productoDiv.querySelector(".card-text").textContent;
   const imagen = productoDiv.querySelector(".card-img-top").getAttribute("src");
 
-  const valor = parseFloat(precioTexto.replace(/[^0-9.]/g, "")); // Elimina $ y convierte a número
+  const valor = parseFloat(precioTexto.replace(/[^0-9.]/g, ""));
 
   const producto = {
     nombre: nombre,
     valor: valor,
-    imagen: imagen
+    imagen: imagen,
+    tipo: tipo,          
+    modo: modo,          
+    idItem: idItem       
   };
 
-  addCart(producto); // Ya la tienes definida
+  addCart(producto);
 }
+  
 function addCart(producto) {
   carrito.push(producto);
   actualizarContador();
@@ -89,6 +93,42 @@ function actualizarSidebar() {
     cartItemsContainer.appendChild(itemDiv);
   });
 }
+async function enviarCarrito() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío.");
+    return;
+  }
+
+  for (const item of carrito) {
+    const payload = {
+      tipo: item.tipo,
+      modo: item.modo,
+      kit_id: item.tipo === "kit" ? item.idItem : null,
+      herramienta_codigo: item.tipo === "herramienta" ? item.idItem : null,
+      cantidad: 1 // Puedes personalizar esto si el usuario elige más de uno
+    };
+
+    try {
+      await fetch("http://localhost:8000", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+    } catch (error) {
+      console.error("Error al enviar al backend:", error);
+      alert("Ocurrió un error al enviar el carrito.");
+      return;
+    }
+  }
+
+  alert("Carrito enviado correctamente ✅");
+  carrito = [];
+  actualizarContador();
+  actualizarSidebar();
+}
+
 
 // kits
   function cambiarImagenPrincipal(src) {
